@@ -8,8 +8,8 @@ const directoryToServe = path.join(__dirname, 'screens');
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
-    // Default to splash_screen.tsx if root is requested
-    let filePath = req.url === '/' ? '/splash_screen.tsx' : req.url;
+    // Default landing page (index)
+    let filePath = req.url === '/' ? '/index.html' : req.url;
     
     // Remove query parameters if any
     filePath = filePath.split('?')[0];
